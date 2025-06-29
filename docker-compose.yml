@@ -1,0 +1,28 @@
+services:
+  
+  optimistic_wilson:
+
+    image: djangotask:v1
+    environment:
+      - DB_name=postgres
+      - DB_user=postgres
+      - DB_pass=ADMIN
+      - DB_host=mypostgres2
+      - DB_post=5432
+    ports:
+      - "89:8000"
+    depends_on:
+      - mypostgres2
+
+  mypostgres2:
+
+    image: postgres
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=ADMIN 
+volumes:
+  postgres-volume:
+
+
+    

@@ -1,0 +1,3 @@
+docker run -d -p 83:8000 --add-host=host.docker.internal:host-gateway -e DB_name="postgres" -e DB_user="postgres" -e DB_pass="admin" -e DB_host="host.docker.internal" -e DB_post="5432" djangotask:v1
+
+docker run -d -e POSTGRES_PASSWORD=admin1 -e -p 5433:5432 -v pgdata:/var/lib/postgresql/data postgres
